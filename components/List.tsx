@@ -6,6 +6,7 @@ interface ListProps {
 }
 
 const List: React.FC<ListProps> = ({ data }) => {
+  console.log(data)
   return (
     <div className="list">
       <div className="header">
@@ -13,8 +14,8 @@ const List: React.FC<ListProps> = ({ data }) => {
         <div className="amount">Previous Value</div>
         <div className="amount">Current Value</div>
       </div>
-
-      {data.map((protocol: any) => (
+      
+      {data?.map((protocol: any) => (
         <Row protocol={protocol} key={protocol.id} />
       ))}
 

@@ -15,12 +15,13 @@ const cardHeight = 600;
 const Row: React.FC<RowProps> = ({ protocol }) => {
   const plausible = usePlausible();
   const [open, setOpen] = useState(false);
-
   let isApp = true;
 
   return (
     <Fragment>
-      <div
+      {(!protocol.results.name) ? null: 
+      <>
+        <div
         onClick={() => {
           setOpen(toggle);
           plausible("open-details", {
@@ -47,6 +48,7 @@ const Row: React.FC<RowProps> = ({ protocol }) => {
           <DetailsCard metadata={protocol.results.metadata} />
         </div>
       </CSSTransition>
+      </>}
       <style jsx>{`
         .item {
           display: flex;

@@ -6,13 +6,13 @@ import useSWR from "swr";
 const fetcher = (url: string) =>
   fetch(url).then(async (res) => {
     let r = await res.json();
-    return r.coefficients.map((chain: any, indx: number) => {
+    return r.coefficients?.map((chain: any, indx: number) => {
       return {
         id: indx + 1,
         results: {
-          metadata: CHAIN_DATA.get(chain.chain_token).metadata,
-          name: CHAIN_DATA.get(chain.chain_token).name,
-          icon: CHAIN_DATA.get(chain.chain_token).icon,
+          metadata: CHAIN_DATA?.get(chain.chain_token)?.metadata,
+          name: CHAIN_DATA?.get(chain.chain_token)?.name,
+          icon: CHAIN_DATA?.get(chain.chain_token)?.icon,
           currVal: chain.naka_co_curr_val,
           prevVal: chain.naka_co_prev_val,
         },
@@ -27,7 +27,7 @@ export const Home: () => JSX.Element = () => {
   // Here's a link I found that makes me think env vars are tricky:
   // https://www.saltycrane.com/blog/2021/04/buildtime-vs-runtime-environment-variables-nextjs-docker/
   // PS: This is the nakaflow server address.
-  let url = "http://168.119.165.122:8080/naka-coeffs";
+  let url = "https://nakaflow.io/api/naka-coeffs";
   const { data, error } = useSWR(url, fetcher);
 
   if (error) {
@@ -158,6 +158,34 @@ export const Home: () => JSX.Element = () => {
       </div>
 
       <div>
+        <p className="contentTitle">Contributors</p>
+        <p className="content">
+        Thank you to the following contributors who have submited pull requests to add networks to Nakaflow.
+        <br />
+        <br />
+        Github Id <a href="https://github.com/xenowits">xenowits</a> - Network (Sonlana,Cosmos,Avalanche,Graph Protocol,Near,Polygon,Regen Network,Juno and Ethereum)
+        <br />
+        <br />
+        Github Id <a href="https://github.com/rachel-bousfield">rachel-bousfield</a> - Network (Nano)
+        <br />
+        <br />
+        Github Id <a href="https://github.com/Romainua">Romainua</a> - Network (Sui)
+        <br />
+        <br />
+        Github Id <a href="https://github.com/es92">es92</a> - Network (Mina)
+        <br />
+        <br />
+        Github Id <a href="https://github.com/jhernandezb">jhernandezb</a> - Network (Stargaze)
+        <br />
+        <br />
+        Github Id <a href="https://github.com/etienne-napoleone">etienne-napoleone</a> - Network (Terra)
+        <br />
+        <br />
+        Github Id <a href="https://github.com/swirlds-matt">swirlds-matt</a> - Network (Hedera)
+        </p>
+      </div>
+     
+      <div> 
         <p className="contentTitle">Support Nakaflow</p>
         <p className="content">
           Nakaflow is brought to you by{" "}
@@ -176,7 +204,7 @@ export const Home: () => JSX.Element = () => {
           If you'd like to help keep projects like Nakaflow running and support
           our work, please consider staking with us on your networks of choice.
           You can learn more about how to do so at our{" "}
-          <a href="https://chainflow.io/chainflow-staking-systems/">
+          <a href="https://chainflow.io/staking/">
             Staking Services page
           </a>
           . We sincerely appreciate your help in the movement for
