@@ -166,9 +166,6 @@ export const Home: () => JSX.Element = () => {
         Github Id <a href="https://github.com/xenowits">xenowits</a> - Network (Sonlana,Cosmos,Avalanche,Graph Protocol,Near,Polygon,Regen Network,Juno and Ethereum)
         <br />
         <br />
-        Github Id <a href="https://github.com/rachel-bousfield">rachel-bousfield</a> - Network (Nano)
-        <br />
-        <br />
         Github Id <a href="https://github.com/Romainua">Romainua</a> - Network (Sui)
         <br />
         <br />
@@ -182,6 +179,9 @@ export const Home: () => JSX.Element = () => {
         <br />
         <br />
         Github Id <a href="https://github.com/swirlds-matt">swirlds-matt</a> - Network (Hedera)
+        <br />
+        <br />
+        Github Id <a href="https://github.com/BrazyDevelopment">BrazyDevelopment</a> - Network (Nano)
         </p>
       </div>
      
@@ -209,15 +209,6 @@ export const Home: () => JSX.Element = () => {
           </a>
           . We sincerely appreciate your help in the movement for
           decentralization 🙏. <br />
-        </p>
-      </div>
-
-      <div>
-        <p className="contentTitle">Join the discussion</p>
-        <p className="content">
-          You can join the{" "}
-          <a href="https://discord.gg/Una8qmFg">public discord</a> to discuss
-          ideas with the nakaflow community and provide product feedback. <br />
         </p>
       </div>
 
