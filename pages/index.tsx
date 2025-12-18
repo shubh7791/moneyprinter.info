@@ -54,6 +54,10 @@ export const Home: () => JSX.Element = () => {
         </p>
       </div>
     );
+  
+  const sortedChains = [...data].sort((a, b) => {
+    return a.results.name.localeCompare(b.results.name);
+  });
 
   return (
     <main>
@@ -82,7 +86,7 @@ export const Home: () => JSX.Element = () => {
         </a>
         <script async src="https://platform.twitter.com/widgets.js"></script>
       </div> */}
-      <List data={data} />
+      <List data={sortedChains} />
       <div>
         <p className="contentTitle">About the Nakamoto Coefficient</p>
         <p className="content">
