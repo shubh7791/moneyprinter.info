@@ -36,7 +36,7 @@ export const Home: () => JSX.Element = () => {
       <div>
         <h1 className="title">An error has occurred</h1>
         <p className="contentTitle">
-          Ping me on <a href="https://twitter.com/xenowits">twitter</a>. I will
+          Ping me on <a href="https://twitter.com/KavyamSingh">twitter</a>. I will
           try to look into it.
         </p>
       </div>
@@ -49,7 +49,7 @@ export const Home: () => JSX.Element = () => {
         <h1 className="description">Loading...</h1>
         <h2>Seems like server didn't send any data 🤔</h2>
         <p className="contentTitle">
-          Ping me on <a href="https://twitter.com/xenowits">twitter</a>. I will
+          Ping me on <a href="https://twitter.com/KavyamSingh">twitter</a>. I will
           try to look into it.
         </p>
       </div>
